@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**futureWeather**](APIsApi.md#futureWeather) | **GET** /future.json | Future API
 [**historyWeather**](APIsApi.md#historyWeather) | **GET** /history.json | History API
 [**ipLookup**](APIsApi.md#ipLookup) | **GET** /ip.json | IP Lookup API
+[**marineWeather**](APIsApi.md#marineWeather) | **GET** /marine.json | Marine Weather API
 [**realtimeWeather**](APIsApi.md#realtimeWeather) | **GET** /current.json | Realtime API
 [**searchAutocompleteWeather**](APIsApi.md#searchAutocompleteWeather) | **GET** /search.json | Search/Autocomplete API
 [**timeZone**](APIsApi.md#timeZone) | **GET** /timezone.json | Time Zone API
@@ -72,11 +73,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **forecastWeather**
-> object forecastWeather($q, $days, $dt, $unixdt, $hour, $lang)
+> object forecastWeather($q, $days, $dt, $unixdt, $hour, $lang, $alerts, $aqi, $tp)
 
 Forecast API
 
-Forecast weather API method returns upto next 10 day weather forecast and weather alert as json. The data is returned as a Forecast Object.<br /><br />Forecast object contains astronomy data, day weather forecast and hourly interval weather information for a given city.
+Forecast weather API method returns, depending upon your price plan level, upto next 14 day weather forecast and weather alert as json or xml. The data is returned as a Forecast Object.<br /><br />Forecast object contains astronomy data, day weather forecast and hourly interval weather information for a given city.
 
 ### Example
 ```php
@@ -100,9 +101,12 @@ $dt = new \DateTime("2013-10-20"); // \DateTime | Date should be between today a
 $unixdt = 56; // int | Please either pass 'dt' or 'unixdt' and not both in same request. unixdt should be between today and next 14 day in Unix format. e.g. 1490227200
 $hour = 56; // int | Must be in 24 hour. For example 5 pm should be hour=17, 6 am as hour=6
 $lang = "lang_example"; // string | Returns 'condition:text' field in API in the desired language.<br /> Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to check 'lang-code'.
+$alerts = "alerts_example"; // string | Enable/Disable alerts in forecast API output. Example, alerts=yes or alerts=no.
+$aqi = "aqi_example"; // string | Enable/Disable Air Quality data in forecast API output. Example, aqi=yes or aqi=no.
+$tp = 56; // int | Get 15 min interval or 24 hour average data for Forecast and History API. Available for Enterprise clients only. E.g:- tp=15
 
 try {
-    $result = $apiInstance->forecastWeather($q, $days, $dt, $unixdt, $hour, $lang);
+    $result = $apiInstance->forecastWeather($q, $days, $dt, $unixdt, $hour, $lang, $alerts, $aqi, $tp);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling APIsApi->forecastWeather: ', $e->getMessage(), PHP_EOL;
@@ -120,6 +124,9 @@ Name | Type | Description  | Notes
  **unixdt** | **int**| Please either pass &#39;dt&#39; or &#39;unixdt&#39; and not both in same request. unixdt should be between today and next 14 day in Unix format. e.g. 1490227200 | [optional]
  **hour** | **int**| Must be in 24 hour. For example 5 pm should be hour&#x3D;17, 6 am as hour&#x3D;6 | [optional]
  **lang** | **string**| Returns &#39;condition:text&#39; field in API in the desired language.&lt;br /&gt; Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to check &#39;lang-code&#39;. | [optional]
+ **alerts** | **string**| Enable/Disable alerts in forecast API output. Example, alerts&#x3D;yes or alerts&#x3D;no. | [optional]
+ **aqi** | **string**| Enable/Disable Air Quality data in forecast API output. Example, aqi&#x3D;yes or aqi&#x3D;no. | [optional]
+ **tp** | **int**| Get 15 min interval or 24 hour average data for Forecast and History API. Available for Enterprise clients only. E.g:- tp&#x3D;15 | [optional]
 
 ### Return type
 
@@ -141,7 +148,7 @@ Name | Type | Description  | Notes
 
 Future API
 
-Future weather API method returns weather in a 3 hourly interval in future for a date between 14 days and 300 days from today in the future.
+Future weather API method returns weather in a 3 hourly interval in future for a date between 14 days and 365 days from today in the future.
 
 ### Example
 ```php
@@ -305,6 +312,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Ip**](../Model/Ip.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **marineWeather**
+> object marineWeather($q, $days, $dt, $unixdt, $hour, $lang)
+
+Marine Weather API
+
+Marine weather API method returns upto next 7 day (depending upon your price plan level) marine and sailing weather forecast and tide data (depending upon your price plan level) as json or xml. The data is returned as a Marine Object.<br /><br />Marine object, depending upon your price plan level, contains astronomy data, day weather forecast and hourly interval weather information and tide data for a given sea/ocean point.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: ApiKeyAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('key', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\APIsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$q = "q_example"; // string | Pass Latitude/Longitude (decimal degree) which is on a sea/ocean. Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to learn more.
+$days = 56; // int | Number of days of weather forecast. Value ranges from 1 to 7
+$dt = new \DateTime("2013-10-20"); // \DateTime | Date should be between today and next 7 day in yyyy-MM-dd format. e.g. '2023-05-20'
+$unixdt = 56; // int | Please either pass 'dt' or 'unixdt' and not both in same request. unixdt should be between today and next 7 day in Unix format. e.g. 1490227200
+$hour = 56; // int | Must be in 24 hour. For example 5 pm should be hour=17, 6 am as hour=6
+$lang = "lang_example"; // string | Returns 'condition:text' field in API in the desired language.<br /> Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to check 'lang-code'.
+
+try {
+    $result = $apiInstance->marineWeather($q, $days, $dt, $unixdt, $hour, $lang);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling APIsApi->marineWeather: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **q** | **string**| Pass Latitude/Longitude (decimal degree) which is on a sea/ocean. Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to learn more. |
+ **days** | **int**| Number of days of weather forecast. Value ranges from 1 to 7 |
+ **dt** | **\DateTime**| Date should be between today and next 7 day in yyyy-MM-dd format. e.g. &#39;2023-05-20&#39; | [optional]
+ **unixdt** | **int**| Please either pass &#39;dt&#39; or &#39;unixdt&#39; and not both in same request. unixdt should be between today and next 7 day in Unix format. e.g. 1490227200 | [optional]
+ **hour** | **int**| Must be in 24 hour. For example 5 pm should be hour&#x3D;17, 6 am as hour&#x3D;6 | [optional]
+ **lang** | **string**| Returns &#39;condition:text&#39; field in API in the desired language.&lt;br /&gt; Visit [request parameter section](https://www.weatherapi.com/docs/#intro-request) to check &#39;lang-code&#39;. | [optional]
+
+### Return type
+
+**object**
 
 ### Authorization
 
