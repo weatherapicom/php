@@ -1,14 +1,14 @@
-# Current
+# ForecastHour
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**last_updated_epoch** | **int** |  | [optional] 
-**last_updated** | **string** |  | [optional] 
+**time_epoch** | **int** |  | [optional] 
+**time** | **string** |  | [optional] 
 **temp_c** | **float** |  | [optional] 
 **temp_f** | **float** |  | [optional] 
 **is_day** | **int** |  | [optional] 
-**condition** | [**\Swagger\Client\Model\CurrentCondition**](CurrentCondition.md) |  | [optional] 
+**condition** | [**\Swagger\Client\Model\ForecastCondition**](ForecastCondition.md) |  | [optional] 
 **wind_mph** | **float** |  | [optional] 
 **wind_kph** | **float** |  | [optional] 
 **wind_degree** | **float** |  | [optional] 
@@ -21,12 +21,21 @@ Name | Type | Description | Notes
 **cloud** | **float** |  | [optional] 
 **feelslike_c** | **float** |  | [optional] 
 **feelslike_f** | **float** |  | [optional] 
+**windchill_c** | **float** |  | [optional] 
+**windchill_f** | **float** |  | [optional] 
+**heatindex_c** | **float** |  | [optional] 
+**heatindex_f** | **float** |  | [optional] 
+**dewpoint_c** | **float** |  | [optional] 
+**dewpoint_f** | **float** |  | [optional] 
+**will_it_rain** | **int** |  | [optional] 
+**chance_of_rain** | **float** |  | [optional] 
+**will_it_snow** | **int** |  | [optional] 
+**chance_of_snow** | **float** |  | [optional] 
 **vis_km** | **float** |  | [optional] 
 **vis_miles** | **float** |  | [optional] 
-**uv** | **int** |  | [optional] 
 **gust_mph** | **float** |  | [optional] 
 **gust_kph** | **float** |  | [optional] 
-**air_quality** | [**\Swagger\Client\Model\CurrentAirQuality**](CurrentAirQuality.md) |  | [optional] 
+**uv** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
