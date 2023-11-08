@@ -1,6 +1,6 @@
 <?php
 /**
- * Error400
+ * ForecastForecastday
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Error400 Class Doc Comment
+ * ForecastForecastday Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Error400 implements ModelInterface, ArrayAccess
+class ForecastForecastday implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Error400 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'error400';
+    protected static $swaggerModelName = 'forecast_forecastday';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,11 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-        'message' => 'string'
+        'date' => '\DateTime',
+        'date_epoch' => 'int',
+        'day' => '\Swagger\Client\Model\ForecastDay',
+        'astro' => '\Swagger\Client\Model\ForecastAstro',
+        'hour' => '\Swagger\Client\Model\ForecastHour[]'
     ];
 
     /**
@@ -67,8 +70,11 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => 'int32',
-        'message' => null
+        'date' => 'date',
+        'date_epoch' => 'int32',
+        'day' => null,
+        'astro' => null,
+        'hour' => null
     ];
 
     /**
@@ -98,8 +104,11 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message'
+        'date' => 'date',
+        'date_epoch' => 'date_epoch',
+        'day' => 'day',
+        'astro' => 'astro',
+        'hour' => 'hour'
     ];
 
     /**
@@ -108,8 +117,11 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'date' => 'setDate',
+        'date_epoch' => 'setDateEpoch',
+        'day' => 'setDay',
+        'astro' => 'setAstro',
+        'hour' => 'setHour'
     ];
 
     /**
@@ -118,8 +130,11 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'date' => 'getDate',
+        'date_epoch' => 'getDateEpoch',
+        'day' => 'getDay',
+        'astro' => 'getAstro',
+        'hour' => 'getHour'
     ];
 
     /**
@@ -182,8 +197,11 @@ class Error400 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['date_epoch'] = isset($data['date_epoch']) ? $data['date_epoch'] : null;
+        $this->container['day'] = isset($data['day']) ? $data['day'] : null;
+        $this->container['astro'] = isset($data['astro']) ? $data['astro'] : null;
+        $this->container['hour'] = isset($data['hour']) ? $data['hour'] : null;
     }
 
     /**
@@ -211,49 +229,121 @@ class Error400 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets date
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getCode()
+    public function getDate()
     {
-        return $this->container['code'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets code
+     * Sets date
      *
-     * @param int $code code
+     * @param \DateTime $date date
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setDate($date)
     {
-        $this->container['code'] = $code;
+        $this->container['date'] = $date;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets date_epoch
      *
-     * @return string
+     * @return int
      */
-    public function getMessage()
+    public function getDateEpoch()
     {
-        return $this->container['message'];
+        return $this->container['date_epoch'];
     }
 
     /**
-     * Sets message
+     * Sets date_epoch
      *
-     * @param string $message message
+     * @param int $date_epoch date_epoch
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setDateEpoch($date_epoch)
     {
-        $this->container['message'] = $message;
+        $this->container['date_epoch'] = $date_epoch;
+
+        return $this;
+    }
+
+    /**
+     * Gets day
+     *
+     * @return \Swagger\Client\Model\ForecastDay
+     */
+    public function getDay()
+    {
+        return $this->container['day'];
+    }
+
+    /**
+     * Sets day
+     *
+     * @param \Swagger\Client\Model\ForecastDay $day day
+     *
+     * @return $this
+     */
+    public function setDay($day)
+    {
+        $this->container['day'] = $day;
+
+        return $this;
+    }
+
+    /**
+     * Gets astro
+     *
+     * @return \Swagger\Client\Model\ForecastAstro
+     */
+    public function getAstro()
+    {
+        return $this->container['astro'];
+    }
+
+    /**
+     * Sets astro
+     *
+     * @param \Swagger\Client\Model\ForecastAstro $astro astro
+     *
+     * @return $this
+     */
+    public function setAstro($astro)
+    {
+        $this->container['astro'] = $astro;
+
+        return $this;
+    }
+
+    /**
+     * Gets hour
+     *
+     * @return \Swagger\Client\Model\ForecastHour[]
+     */
+    public function getHour()
+    {
+        return $this->container['hour'];
+    }
+
+    /**
+     * Sets hour
+     *
+     * @param \Swagger\Client\Model\ForecastHour[] $hour hour
+     *
+     * @return $this
+     */
+    public function setHour($hour)
+    {
+        $this->container['hour'] = $hour;
 
         return $this;
     }

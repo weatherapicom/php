@@ -1,6 +1,6 @@
 <?php
 /**
- * Current
+ * MarineHour
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Current Class Doc Comment
+ * MarineHour Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Current implements ModelInterface, ArrayAccess
+class MarineHour implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Current implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'current';
+    protected static $swaggerModelName = 'marine_hour';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,12 @@ class Current implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'last_updated_epoch' => 'int',
-        'last_updated' => 'string',
+        'time_epoch' => 'int',
+        'time' => 'string',
         'temp_c' => 'float',
         'temp_f' => 'float',
         'is_day' => 'int',
-        'condition' => '\Swagger\Client\Model\CurrentCondition',
+        'condition' => '\Swagger\Client\Model\ForecastCondition',
         'wind_mph' => 'float',
         'wind_kph' => 'float',
         'wind_degree' => 'float',
@@ -75,12 +75,27 @@ class Current implements ModelInterface, ArrayAccess
         'cloud' => 'float',
         'feelslike_c' => 'float',
         'feelslike_f' => 'float',
+        'windchill_c' => 'float',
+        'windchill_f' => 'float',
+        'heatindex_c' => 'float',
+        'heatindex_f' => 'float',
+        'dewpoint_c' => 'float',
+        'dewpoint_f' => 'float',
+        'will_it_rain' => 'int',
+        'chance_of_rain' => 'float',
+        'will_it_snow' => 'int',
+        'chance_of_snow' => 'float',
         'vis_km' => 'float',
         'vis_miles' => 'float',
-        'uv' => 'int',
         'gust_mph' => 'float',
         'gust_kph' => 'float',
-        'air_quality' => '\Swagger\Client\Model\CurrentAirQuality'
+        'sig_ht_mt' => 'float',
+        'swell_ht_mt' => 'float',
+        'swell_ht_ft' => 'float',
+        'swell_dir' => 'float',
+        'swell_dir_16_point' => 'float',
+        'swell_period_secs' => 'float',
+        'uv' => 'int'
     ];
 
     /**
@@ -89,8 +104,8 @@ class Current implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'last_updated_epoch' => 'int32',
-        'last_updated' => null,
+        'time_epoch' => 'int32',
+        'time' => null,
         'temp_c' => null,
         'temp_f' => null,
         'is_day' => 'int32',
@@ -107,12 +122,27 @@ class Current implements ModelInterface, ArrayAccess
         'cloud' => null,
         'feelslike_c' => null,
         'feelslike_f' => null,
+        'windchill_c' => null,
+        'windchill_f' => null,
+        'heatindex_c' => null,
+        'heatindex_f' => null,
+        'dewpoint_c' => null,
+        'dewpoint_f' => null,
+        'will_it_rain' => 'int32',
+        'chance_of_rain' => null,
+        'will_it_snow' => 'int32',
+        'chance_of_snow' => null,
         'vis_km' => null,
         'vis_miles' => null,
-        'uv' => 'int32',
         'gust_mph' => null,
         'gust_kph' => null,
-        'air_quality' => null
+        'sig_ht_mt' => null,
+        'swell_ht_mt' => null,
+        'swell_ht_ft' => null,
+        'swell_dir' => null,
+        'swell_dir_16_point' => null,
+        'swell_period_secs' => null,
+        'uv' => 'int32'
     ];
 
     /**
@@ -142,8 +172,8 @@ class Current implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'last_updated_epoch' => 'last_updated_epoch',
-        'last_updated' => 'last_updated',
+        'time_epoch' => 'time_epoch',
+        'time' => 'time',
         'temp_c' => 'temp_c',
         'temp_f' => 'temp_f',
         'is_day' => 'is_day',
@@ -160,12 +190,27 @@ class Current implements ModelInterface, ArrayAccess
         'cloud' => 'cloud',
         'feelslike_c' => 'feelslike_c',
         'feelslike_f' => 'feelslike_f',
+        'windchill_c' => 'windchill_c',
+        'windchill_f' => 'windchill_f',
+        'heatindex_c' => 'heatindex_c',
+        'heatindex_f' => 'heatindex_f',
+        'dewpoint_c' => 'dewpoint_c',
+        'dewpoint_f' => 'dewpoint_f',
+        'will_it_rain' => 'will_it_rain',
+        'chance_of_rain' => 'chance_of_rain',
+        'will_it_snow' => 'will_it_snow',
+        'chance_of_snow' => 'chance_of_snow',
         'vis_km' => 'vis_km',
         'vis_miles' => 'vis_miles',
-        'uv' => 'uv',
         'gust_mph' => 'gust_mph',
         'gust_kph' => 'gust_kph',
-        'air_quality' => 'air_quality'
+        'sig_ht_mt' => 'sig_ht_mt',
+        'swell_ht_mt' => 'swell_ht_mt',
+        'swell_ht_ft' => 'swell_ht_ft',
+        'swell_dir' => 'swell_dir',
+        'swell_dir_16_point' => 'swell_dir_16_point',
+        'swell_period_secs' => 'swell_period_secs',
+        'uv' => 'uv'
     ];
 
     /**
@@ -174,8 +219,8 @@ class Current implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'last_updated_epoch' => 'setLastUpdatedEpoch',
-        'last_updated' => 'setLastUpdated',
+        'time_epoch' => 'setTimeEpoch',
+        'time' => 'setTime',
         'temp_c' => 'setTempC',
         'temp_f' => 'setTempF',
         'is_day' => 'setIsDay',
@@ -192,12 +237,27 @@ class Current implements ModelInterface, ArrayAccess
         'cloud' => 'setCloud',
         'feelslike_c' => 'setFeelslikeC',
         'feelslike_f' => 'setFeelslikeF',
+        'windchill_c' => 'setWindchillC',
+        'windchill_f' => 'setWindchillF',
+        'heatindex_c' => 'setHeatindexC',
+        'heatindex_f' => 'setHeatindexF',
+        'dewpoint_c' => 'setDewpointC',
+        'dewpoint_f' => 'setDewpointF',
+        'will_it_rain' => 'setWillItRain',
+        'chance_of_rain' => 'setChanceOfRain',
+        'will_it_snow' => 'setWillItSnow',
+        'chance_of_snow' => 'setChanceOfSnow',
         'vis_km' => 'setVisKm',
         'vis_miles' => 'setVisMiles',
-        'uv' => 'setUv',
         'gust_mph' => 'setGustMph',
         'gust_kph' => 'setGustKph',
-        'air_quality' => 'setAirQuality'
+        'sig_ht_mt' => 'setSigHtMt',
+        'swell_ht_mt' => 'setSwellHtMt',
+        'swell_ht_ft' => 'setSwellHtFt',
+        'swell_dir' => 'setSwellDir',
+        'swell_dir_16_point' => 'setSwellDir16Point',
+        'swell_period_secs' => 'setSwellPeriodSecs',
+        'uv' => 'setUv'
     ];
 
     /**
@@ -206,8 +266,8 @@ class Current implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'last_updated_epoch' => 'getLastUpdatedEpoch',
-        'last_updated' => 'getLastUpdated',
+        'time_epoch' => 'getTimeEpoch',
+        'time' => 'getTime',
         'temp_c' => 'getTempC',
         'temp_f' => 'getTempF',
         'is_day' => 'getIsDay',
@@ -224,12 +284,27 @@ class Current implements ModelInterface, ArrayAccess
         'cloud' => 'getCloud',
         'feelslike_c' => 'getFeelslikeC',
         'feelslike_f' => 'getFeelslikeF',
+        'windchill_c' => 'getWindchillC',
+        'windchill_f' => 'getWindchillF',
+        'heatindex_c' => 'getHeatindexC',
+        'heatindex_f' => 'getHeatindexF',
+        'dewpoint_c' => 'getDewpointC',
+        'dewpoint_f' => 'getDewpointF',
+        'will_it_rain' => 'getWillItRain',
+        'chance_of_rain' => 'getChanceOfRain',
+        'will_it_snow' => 'getWillItSnow',
+        'chance_of_snow' => 'getChanceOfSnow',
         'vis_km' => 'getVisKm',
         'vis_miles' => 'getVisMiles',
-        'uv' => 'getUv',
         'gust_mph' => 'getGustMph',
         'gust_kph' => 'getGustKph',
-        'air_quality' => 'getAirQuality'
+        'sig_ht_mt' => 'getSigHtMt',
+        'swell_ht_mt' => 'getSwellHtMt',
+        'swell_ht_ft' => 'getSwellHtFt',
+        'swell_dir' => 'getSwellDir',
+        'swell_dir_16_point' => 'getSwellDir16Point',
+        'swell_period_secs' => 'getSwellPeriodSecs',
+        'uv' => 'getUv'
     ];
 
     /**
@@ -292,8 +367,8 @@ class Current implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['last_updated_epoch'] = isset($data['last_updated_epoch']) ? $data['last_updated_epoch'] : null;
-        $this->container['last_updated'] = isset($data['last_updated']) ? $data['last_updated'] : null;
+        $this->container['time_epoch'] = isset($data['time_epoch']) ? $data['time_epoch'] : null;
+        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
         $this->container['temp_c'] = isset($data['temp_c']) ? $data['temp_c'] : null;
         $this->container['temp_f'] = isset($data['temp_f']) ? $data['temp_f'] : null;
         $this->container['is_day'] = isset($data['is_day']) ? $data['is_day'] : null;
@@ -310,12 +385,27 @@ class Current implements ModelInterface, ArrayAccess
         $this->container['cloud'] = isset($data['cloud']) ? $data['cloud'] : null;
         $this->container['feelslike_c'] = isset($data['feelslike_c']) ? $data['feelslike_c'] : null;
         $this->container['feelslike_f'] = isset($data['feelslike_f']) ? $data['feelslike_f'] : null;
+        $this->container['windchill_c'] = isset($data['windchill_c']) ? $data['windchill_c'] : null;
+        $this->container['windchill_f'] = isset($data['windchill_f']) ? $data['windchill_f'] : null;
+        $this->container['heatindex_c'] = isset($data['heatindex_c']) ? $data['heatindex_c'] : null;
+        $this->container['heatindex_f'] = isset($data['heatindex_f']) ? $data['heatindex_f'] : null;
+        $this->container['dewpoint_c'] = isset($data['dewpoint_c']) ? $data['dewpoint_c'] : null;
+        $this->container['dewpoint_f'] = isset($data['dewpoint_f']) ? $data['dewpoint_f'] : null;
+        $this->container['will_it_rain'] = isset($data['will_it_rain']) ? $data['will_it_rain'] : null;
+        $this->container['chance_of_rain'] = isset($data['chance_of_rain']) ? $data['chance_of_rain'] : null;
+        $this->container['will_it_snow'] = isset($data['will_it_snow']) ? $data['will_it_snow'] : null;
+        $this->container['chance_of_snow'] = isset($data['chance_of_snow']) ? $data['chance_of_snow'] : null;
         $this->container['vis_km'] = isset($data['vis_km']) ? $data['vis_km'] : null;
         $this->container['vis_miles'] = isset($data['vis_miles']) ? $data['vis_miles'] : null;
-        $this->container['uv'] = isset($data['uv']) ? $data['uv'] : null;
         $this->container['gust_mph'] = isset($data['gust_mph']) ? $data['gust_mph'] : null;
         $this->container['gust_kph'] = isset($data['gust_kph']) ? $data['gust_kph'] : null;
-        $this->container['air_quality'] = isset($data['air_quality']) ? $data['air_quality'] : null;
+        $this->container['sig_ht_mt'] = isset($data['sig_ht_mt']) ? $data['sig_ht_mt'] : null;
+        $this->container['swell_ht_mt'] = isset($data['swell_ht_mt']) ? $data['swell_ht_mt'] : null;
+        $this->container['swell_ht_ft'] = isset($data['swell_ht_ft']) ? $data['swell_ht_ft'] : null;
+        $this->container['swell_dir'] = isset($data['swell_dir']) ? $data['swell_dir'] : null;
+        $this->container['swell_dir_16_point'] = isset($data['swell_dir_16_point']) ? $data['swell_dir_16_point'] : null;
+        $this->container['swell_period_secs'] = isset($data['swell_period_secs']) ? $data['swell_period_secs'] : null;
+        $this->container['uv'] = isset($data['uv']) ? $data['uv'] : null;
     }
 
     /**
@@ -343,49 +433,49 @@ class Current implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets last_updated_epoch
+     * Gets time_epoch
      *
      * @return int
      */
-    public function getLastUpdatedEpoch()
+    public function getTimeEpoch()
     {
-        return $this->container['last_updated_epoch'];
+        return $this->container['time_epoch'];
     }
 
     /**
-     * Sets last_updated_epoch
+     * Sets time_epoch
      *
-     * @param int $last_updated_epoch last_updated_epoch
+     * @param int $time_epoch time_epoch
      *
      * @return $this
      */
-    public function setLastUpdatedEpoch($last_updated_epoch)
+    public function setTimeEpoch($time_epoch)
     {
-        $this->container['last_updated_epoch'] = $last_updated_epoch;
+        $this->container['time_epoch'] = $time_epoch;
 
         return $this;
     }
 
     /**
-     * Gets last_updated
+     * Gets time
      *
      * @return string
      */
-    public function getLastUpdated()
+    public function getTime()
     {
-        return $this->container['last_updated'];
+        return $this->container['time'];
     }
 
     /**
-     * Sets last_updated
+     * Sets time
      *
-     * @param string $last_updated last_updated
+     * @param string $time time
      *
      * @return $this
      */
-    public function setLastUpdated($last_updated)
+    public function setTime($time)
     {
-        $this->container['last_updated'] = $last_updated;
+        $this->container['time'] = $time;
 
         return $this;
     }
@@ -465,7 +555,7 @@ class Current implements ModelInterface, ArrayAccess
     /**
      * Gets condition
      *
-     * @return \Swagger\Client\Model\CurrentCondition
+     * @return \Swagger\Client\Model\ForecastCondition
      */
     public function getCondition()
     {
@@ -475,7 +565,7 @@ class Current implements ModelInterface, ArrayAccess
     /**
      * Sets condition
      *
-     * @param \Swagger\Client\Model\CurrentCondition $condition condition
+     * @param \Swagger\Client\Model\ForecastCondition $condition condition
      *
      * @return $this
      */
@@ -775,6 +865,246 @@ class Current implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets windchill_c
+     *
+     * @return float
+     */
+    public function getWindchillC()
+    {
+        return $this->container['windchill_c'];
+    }
+
+    /**
+     * Sets windchill_c
+     *
+     * @param float $windchill_c windchill_c
+     *
+     * @return $this
+     */
+    public function setWindchillC($windchill_c)
+    {
+        $this->container['windchill_c'] = $windchill_c;
+
+        return $this;
+    }
+
+    /**
+     * Gets windchill_f
+     *
+     * @return float
+     */
+    public function getWindchillF()
+    {
+        return $this->container['windchill_f'];
+    }
+
+    /**
+     * Sets windchill_f
+     *
+     * @param float $windchill_f windchill_f
+     *
+     * @return $this
+     */
+    public function setWindchillF($windchill_f)
+    {
+        $this->container['windchill_f'] = $windchill_f;
+
+        return $this;
+    }
+
+    /**
+     * Gets heatindex_c
+     *
+     * @return float
+     */
+    public function getHeatindexC()
+    {
+        return $this->container['heatindex_c'];
+    }
+
+    /**
+     * Sets heatindex_c
+     *
+     * @param float $heatindex_c heatindex_c
+     *
+     * @return $this
+     */
+    public function setHeatindexC($heatindex_c)
+    {
+        $this->container['heatindex_c'] = $heatindex_c;
+
+        return $this;
+    }
+
+    /**
+     * Gets heatindex_f
+     *
+     * @return float
+     */
+    public function getHeatindexF()
+    {
+        return $this->container['heatindex_f'];
+    }
+
+    /**
+     * Sets heatindex_f
+     *
+     * @param float $heatindex_f heatindex_f
+     *
+     * @return $this
+     */
+    public function setHeatindexF($heatindex_f)
+    {
+        $this->container['heatindex_f'] = $heatindex_f;
+
+        return $this;
+    }
+
+    /**
+     * Gets dewpoint_c
+     *
+     * @return float
+     */
+    public function getDewpointC()
+    {
+        return $this->container['dewpoint_c'];
+    }
+
+    /**
+     * Sets dewpoint_c
+     *
+     * @param float $dewpoint_c dewpoint_c
+     *
+     * @return $this
+     */
+    public function setDewpointC($dewpoint_c)
+    {
+        $this->container['dewpoint_c'] = $dewpoint_c;
+
+        return $this;
+    }
+
+    /**
+     * Gets dewpoint_f
+     *
+     * @return float
+     */
+    public function getDewpointF()
+    {
+        return $this->container['dewpoint_f'];
+    }
+
+    /**
+     * Sets dewpoint_f
+     *
+     * @param float $dewpoint_f dewpoint_f
+     *
+     * @return $this
+     */
+    public function setDewpointF($dewpoint_f)
+    {
+        $this->container['dewpoint_f'] = $dewpoint_f;
+
+        return $this;
+    }
+
+    /**
+     * Gets will_it_rain
+     *
+     * @return int
+     */
+    public function getWillItRain()
+    {
+        return $this->container['will_it_rain'];
+    }
+
+    /**
+     * Sets will_it_rain
+     *
+     * @param int $will_it_rain will_it_rain
+     *
+     * @return $this
+     */
+    public function setWillItRain($will_it_rain)
+    {
+        $this->container['will_it_rain'] = $will_it_rain;
+
+        return $this;
+    }
+
+    /**
+     * Gets chance_of_rain
+     *
+     * @return float
+     */
+    public function getChanceOfRain()
+    {
+        return $this->container['chance_of_rain'];
+    }
+
+    /**
+     * Sets chance_of_rain
+     *
+     * @param float $chance_of_rain chance_of_rain
+     *
+     * @return $this
+     */
+    public function setChanceOfRain($chance_of_rain)
+    {
+        $this->container['chance_of_rain'] = $chance_of_rain;
+
+        return $this;
+    }
+
+    /**
+     * Gets will_it_snow
+     *
+     * @return int
+     */
+    public function getWillItSnow()
+    {
+        return $this->container['will_it_snow'];
+    }
+
+    /**
+     * Sets will_it_snow
+     *
+     * @param int $will_it_snow will_it_snow
+     *
+     * @return $this
+     */
+    public function setWillItSnow($will_it_snow)
+    {
+        $this->container['will_it_snow'] = $will_it_snow;
+
+        return $this;
+    }
+
+    /**
+     * Gets chance_of_snow
+     *
+     * @return float
+     */
+    public function getChanceOfSnow()
+    {
+        return $this->container['chance_of_snow'];
+    }
+
+    /**
+     * Sets chance_of_snow
+     *
+     * @param float $chance_of_snow chance_of_snow
+     *
+     * @return $this
+     */
+    public function setChanceOfSnow($chance_of_snow)
+    {
+        $this->container['chance_of_snow'] = $chance_of_snow;
+
+        return $this;
+    }
+
+    /**
      * Gets vis_km
      *
      * @return float
@@ -818,30 +1148,6 @@ class Current implements ModelInterface, ArrayAccess
     public function setVisMiles($vis_miles)
     {
         $this->container['vis_miles'] = $vis_miles;
-
-        return $this;
-    }
-
-    /**
-     * Gets uv
-     *
-     * @return int
-     */
-    public function getUv()
-    {
-        return $this->container['uv'];
-    }
-
-    /**
-     * Sets uv
-     *
-     * @param int $uv uv
-     *
-     * @return $this
-     */
-    public function setUv($uv)
-    {
-        $this->container['uv'] = $uv;
 
         return $this;
     }
@@ -895,25 +1201,169 @@ class Current implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets air_quality
+     * Gets sig_ht_mt
      *
-     * @return \Swagger\Client\Model\CurrentAirQuality
+     * @return float
      */
-    public function getAirQuality()
+    public function getSigHtMt()
     {
-        return $this->container['air_quality'];
+        return $this->container['sig_ht_mt'];
     }
 
     /**
-     * Sets air_quality
+     * Sets sig_ht_mt
      *
-     * @param \Swagger\Client\Model\CurrentAirQuality $air_quality air_quality
+     * @param float $sig_ht_mt sig_ht_mt
      *
      * @return $this
      */
-    public function setAirQuality($air_quality)
+    public function setSigHtMt($sig_ht_mt)
     {
-        $this->container['air_quality'] = $air_quality;
+        $this->container['sig_ht_mt'] = $sig_ht_mt;
+
+        return $this;
+    }
+
+    /**
+     * Gets swell_ht_mt
+     *
+     * @return float
+     */
+    public function getSwellHtMt()
+    {
+        return $this->container['swell_ht_mt'];
+    }
+
+    /**
+     * Sets swell_ht_mt
+     *
+     * @param float $swell_ht_mt swell_ht_mt
+     *
+     * @return $this
+     */
+    public function setSwellHtMt($swell_ht_mt)
+    {
+        $this->container['swell_ht_mt'] = $swell_ht_mt;
+
+        return $this;
+    }
+
+    /**
+     * Gets swell_ht_ft
+     *
+     * @return float
+     */
+    public function getSwellHtFt()
+    {
+        return $this->container['swell_ht_ft'];
+    }
+
+    /**
+     * Sets swell_ht_ft
+     *
+     * @param float $swell_ht_ft swell_ht_ft
+     *
+     * @return $this
+     */
+    public function setSwellHtFt($swell_ht_ft)
+    {
+        $this->container['swell_ht_ft'] = $swell_ht_ft;
+
+        return $this;
+    }
+
+    /**
+     * Gets swell_dir
+     *
+     * @return float
+     */
+    public function getSwellDir()
+    {
+        return $this->container['swell_dir'];
+    }
+
+    /**
+     * Sets swell_dir
+     *
+     * @param float $swell_dir swell_dir
+     *
+     * @return $this
+     */
+    public function setSwellDir($swell_dir)
+    {
+        $this->container['swell_dir'] = $swell_dir;
+
+        return $this;
+    }
+
+    /**
+     * Gets swell_dir_16_point
+     *
+     * @return float
+     */
+    public function getSwellDir16Point()
+    {
+        return $this->container['swell_dir_16_point'];
+    }
+
+    /**
+     * Sets swell_dir_16_point
+     *
+     * @param float $swell_dir_16_point swell_dir_16_point
+     *
+     * @return $this
+     */
+    public function setSwellDir16Point($swell_dir_16_point)
+    {
+        $this->container['swell_dir_16_point'] = $swell_dir_16_point;
+
+        return $this;
+    }
+
+    /**
+     * Gets swell_period_secs
+     *
+     * @return float
+     */
+    public function getSwellPeriodSecs()
+    {
+        return $this->container['swell_period_secs'];
+    }
+
+    /**
+     * Sets swell_period_secs
+     *
+     * @param float $swell_period_secs swell_period_secs
+     *
+     * @return $this
+     */
+    public function setSwellPeriodSecs($swell_period_secs)
+    {
+        $this->container['swell_period_secs'] = $swell_period_secs;
+
+        return $this;
+    }
+
+    /**
+     * Gets uv
+     *
+     * @return int
+     */
+    public function getUv()
+    {
+        return $this->container['uv'];
+    }
+
+    /**
+     * Sets uv
+     *
+     * @param int $uv uv
+     *
+     * @return $this
+     */
+    public function setUv($uv)
+    {
+        $this->container['uv'] = $uv;
 
         return $this;
     }

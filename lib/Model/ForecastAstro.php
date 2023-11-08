@@ -1,6 +1,6 @@
 <?php
 /**
- * Error400
+ * ForecastAstro
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Error400 Class Doc Comment
+ * ForecastAstro Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Error400 implements ModelInterface, ArrayAccess
+class ForecastAstro implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Error400 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'error400';
+    protected static $swaggerModelName = 'forecast_astro';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,12 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-        'message' => 'string'
+        'sunrise' => 'string',
+        'sunset' => 'string',
+        'moonrise' => 'string',
+        'moonset' => 'string',
+        'moon_phase' => 'string',
+        'moon_illumination' => 'string'
     ];
 
     /**
@@ -67,8 +71,12 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => 'int32',
-        'message' => null
+        'sunrise' => null,
+        'sunset' => null,
+        'moonrise' => null,
+        'moonset' => null,
+        'moon_phase' => null,
+        'moon_illumination' => null
     ];
 
     /**
@@ -98,8 +106,12 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message'
+        'sunrise' => 'sunrise',
+        'sunset' => 'sunset',
+        'moonrise' => 'moonrise',
+        'moonset' => 'moonset',
+        'moon_phase' => 'moon_phase',
+        'moon_illumination' => 'moon_illumination'
     ];
 
     /**
@@ -108,8 +120,12 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'sunrise' => 'setSunrise',
+        'sunset' => 'setSunset',
+        'moonrise' => 'setMoonrise',
+        'moonset' => 'setMoonset',
+        'moon_phase' => 'setMoonPhase',
+        'moon_illumination' => 'setMoonIllumination'
     ];
 
     /**
@@ -118,8 +134,12 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'sunrise' => 'getSunrise',
+        'sunset' => 'getSunset',
+        'moonrise' => 'getMoonrise',
+        'moonset' => 'getMoonset',
+        'moon_phase' => 'getMoonPhase',
+        'moon_illumination' => 'getMoonIllumination'
     ];
 
     /**
@@ -182,8 +202,12 @@ class Error400 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['sunrise'] = isset($data['sunrise']) ? $data['sunrise'] : null;
+        $this->container['sunset'] = isset($data['sunset']) ? $data['sunset'] : null;
+        $this->container['moonrise'] = isset($data['moonrise']) ? $data['moonrise'] : null;
+        $this->container['moonset'] = isset($data['moonset']) ? $data['moonset'] : null;
+        $this->container['moon_phase'] = isset($data['moon_phase']) ? $data['moon_phase'] : null;
+        $this->container['moon_illumination'] = isset($data['moon_illumination']) ? $data['moon_illumination'] : null;
     }
 
     /**
@@ -211,49 +235,145 @@ class Error400 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets sunrise
      *
-     * @return int
+     * @return string
      */
-    public function getCode()
+    public function getSunrise()
     {
-        return $this->container['code'];
+        return $this->container['sunrise'];
     }
 
     /**
-     * Sets code
+     * Sets sunrise
      *
-     * @param int $code code
+     * @param string $sunrise sunrise
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setSunrise($sunrise)
     {
-        $this->container['code'] = $code;
+        $this->container['sunrise'] = $sunrise;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets sunset
      *
      * @return string
      */
-    public function getMessage()
+    public function getSunset()
     {
-        return $this->container['message'];
+        return $this->container['sunset'];
     }
 
     /**
-     * Sets message
+     * Sets sunset
      *
-     * @param string $message message
+     * @param string $sunset sunset
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setSunset($sunset)
     {
-        $this->container['message'] = $message;
+        $this->container['sunset'] = $sunset;
+
+        return $this;
+    }
+
+    /**
+     * Gets moonrise
+     *
+     * @return string
+     */
+    public function getMoonrise()
+    {
+        return $this->container['moonrise'];
+    }
+
+    /**
+     * Sets moonrise
+     *
+     * @param string $moonrise moonrise
+     *
+     * @return $this
+     */
+    public function setMoonrise($moonrise)
+    {
+        $this->container['moonrise'] = $moonrise;
+
+        return $this;
+    }
+
+    /**
+     * Gets moonset
+     *
+     * @return string
+     */
+    public function getMoonset()
+    {
+        return $this->container['moonset'];
+    }
+
+    /**
+     * Sets moonset
+     *
+     * @param string $moonset moonset
+     *
+     * @return $this
+     */
+    public function setMoonset($moonset)
+    {
+        $this->container['moonset'] = $moonset;
+
+        return $this;
+    }
+
+    /**
+     * Gets moon_phase
+     *
+     * @return string
+     */
+    public function getMoonPhase()
+    {
+        return $this->container['moon_phase'];
+    }
+
+    /**
+     * Sets moon_phase
+     *
+     * @param string $moon_phase moon_phase
+     *
+     * @return $this
+     */
+    public function setMoonPhase($moon_phase)
+    {
+        $this->container['moon_phase'] = $moon_phase;
+
+        return $this;
+    }
+
+    /**
+     * Gets moon_illumination
+     *
+     * @return string
+     */
+    public function getMoonIllumination()
+    {
+        return $this->container['moon_illumination'];
+    }
+
+    /**
+     * Sets moon_illumination
+     *
+     * @param string $moon_illumination moon_illumination
+     *
+     * @return $this
+     */
+    public function setMoonIllumination($moon_illumination)
+    {
+        $this->container['moon_illumination'] = $moon_illumination;
 
         return $this;
     }

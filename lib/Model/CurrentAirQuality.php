@@ -1,6 +1,6 @@
 <?php
 /**
- * Error400
+ * CurrentAirQuality
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Error400 Class Doc Comment
+ * CurrentAirQuality Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Error400 implements ModelInterface, ArrayAccess
+class CurrentAirQuality implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Error400 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'error400';
+    protected static $swaggerModelName = 'current_air_quality';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,14 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-        'message' => 'string'
+        'co' => 'float',
+        'no2' => 'float',
+        'o3' => 'float',
+        'so2' => 'float',
+        'pm2_5' => 'float',
+        'pm10' => 'float',
+        'us_epa_index' => 'int',
+        'gb_defra_index' => 'int'
     ];
 
     /**
@@ -67,8 +73,14 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => 'int32',
-        'message' => null
+        'co' => null,
+        'no2' => null,
+        'o3' => null,
+        'so2' => null,
+        'pm2_5' => null,
+        'pm10' => null,
+        'us_epa_index' => 'int32',
+        'gb_defra_index' => 'int32'
     ];
 
     /**
@@ -98,8 +110,14 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message'
+        'co' => 'co',
+        'no2' => 'no2',
+        'o3' => 'o3',
+        'so2' => 'so2',
+        'pm2_5' => 'pm2_5',
+        'pm10' => 'pm10',
+        'us_epa_index' => 'us-epa-index',
+        'gb_defra_index' => 'gb-defra-index'
     ];
 
     /**
@@ -108,8 +126,14 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'co' => 'setCo',
+        'no2' => 'setNo2',
+        'o3' => 'setO3',
+        'so2' => 'setSo2',
+        'pm2_5' => 'setPm25',
+        'pm10' => 'setPm10',
+        'us_epa_index' => 'setUsEpaIndex',
+        'gb_defra_index' => 'setGbDefraIndex'
     ];
 
     /**
@@ -118,8 +142,14 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'co' => 'getCo',
+        'no2' => 'getNo2',
+        'o3' => 'getO3',
+        'so2' => 'getSo2',
+        'pm2_5' => 'getPm25',
+        'pm10' => 'getPm10',
+        'us_epa_index' => 'getUsEpaIndex',
+        'gb_defra_index' => 'getGbDefraIndex'
     ];
 
     /**
@@ -182,8 +212,14 @@ class Error400 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['co'] = isset($data['co']) ? $data['co'] : null;
+        $this->container['no2'] = isset($data['no2']) ? $data['no2'] : null;
+        $this->container['o3'] = isset($data['o3']) ? $data['o3'] : null;
+        $this->container['so2'] = isset($data['so2']) ? $data['so2'] : null;
+        $this->container['pm2_5'] = isset($data['pm2_5']) ? $data['pm2_5'] : null;
+        $this->container['pm10'] = isset($data['pm10']) ? $data['pm10'] : null;
+        $this->container['us_epa_index'] = isset($data['us_epa_index']) ? $data['us_epa_index'] : null;
+        $this->container['gb_defra_index'] = isset($data['gb_defra_index']) ? $data['gb_defra_index'] : null;
     }
 
     /**
@@ -211,49 +247,193 @@ class Error400 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets co
      *
-     * @return int
+     * @return float
      */
-    public function getCode()
+    public function getCo()
     {
-        return $this->container['code'];
+        return $this->container['co'];
     }
 
     /**
-     * Sets code
+     * Sets co
      *
-     * @param int $code code
+     * @param float $co co
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setCo($co)
     {
-        $this->container['code'] = $code;
+        $this->container['co'] = $co;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets no2
      *
-     * @return string
+     * @return float
      */
-    public function getMessage()
+    public function getNo2()
     {
-        return $this->container['message'];
+        return $this->container['no2'];
     }
 
     /**
-     * Sets message
+     * Sets no2
      *
-     * @param string $message message
+     * @param float $no2 no2
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setNo2($no2)
     {
-        $this->container['message'] = $message;
+        $this->container['no2'] = $no2;
+
+        return $this;
+    }
+
+    /**
+     * Gets o3
+     *
+     * @return float
+     */
+    public function getO3()
+    {
+        return $this->container['o3'];
+    }
+
+    /**
+     * Sets o3
+     *
+     * @param float $o3 o3
+     *
+     * @return $this
+     */
+    public function setO3($o3)
+    {
+        $this->container['o3'] = $o3;
+
+        return $this;
+    }
+
+    /**
+     * Gets so2
+     *
+     * @return float
+     */
+    public function getSo2()
+    {
+        return $this->container['so2'];
+    }
+
+    /**
+     * Sets so2
+     *
+     * @param float $so2 so2
+     *
+     * @return $this
+     */
+    public function setSo2($so2)
+    {
+        $this->container['so2'] = $so2;
+
+        return $this;
+    }
+
+    /**
+     * Gets pm2_5
+     *
+     * @return float
+     */
+    public function getPm25()
+    {
+        return $this->container['pm2_5'];
+    }
+
+    /**
+     * Sets pm2_5
+     *
+     * @param float $pm2_5 pm2_5
+     *
+     * @return $this
+     */
+    public function setPm25($pm2_5)
+    {
+        $this->container['pm2_5'] = $pm2_5;
+
+        return $this;
+    }
+
+    /**
+     * Gets pm10
+     *
+     * @return float
+     */
+    public function getPm10()
+    {
+        return $this->container['pm10'];
+    }
+
+    /**
+     * Sets pm10
+     *
+     * @param float $pm10 pm10
+     *
+     * @return $this
+     */
+    public function setPm10($pm10)
+    {
+        $this->container['pm10'] = $pm10;
+
+        return $this;
+    }
+
+    /**
+     * Gets us_epa_index
+     *
+     * @return int
+     */
+    public function getUsEpaIndex()
+    {
+        return $this->container['us_epa_index'];
+    }
+
+    /**
+     * Sets us_epa_index
+     *
+     * @param int $us_epa_index us_epa_index
+     *
+     * @return $this
+     */
+    public function setUsEpaIndex($us_epa_index)
+    {
+        $this->container['us_epa_index'] = $us_epa_index;
+
+        return $this;
+    }
+
+    /**
+     * Gets gb_defra_index
+     *
+     * @return int
+     */
+    public function getGbDefraIndex()
+    {
+        return $this->container['gb_defra_index'];
+    }
+
+    /**
+     * Sets gb_defra_index
+     *
+     * @param int $gb_defra_index gb_defra_index
+     *
+     * @return $this
+     */
+    public function setGbDefraIndex($gb_defra_index)
+    {
+        $this->container['gb_defra_index'] = $gb_defra_index;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Error400
+ * ForecastCondition
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Error400 Class Doc Comment
+ * ForecastCondition Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Error400 implements ModelInterface, ArrayAccess
+class ForecastCondition implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Error400 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'error400';
+    protected static $swaggerModelName = 'forecast_condition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-        'message' => 'string'
+        'text' => 'string',
+        'icon' => 'string',
+        'code' => 'int'
     ];
 
     /**
@@ -67,8 +68,9 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => 'int32',
-        'message' => null
+        'text' => null,
+        'icon' => null,
+        'code' => 'int32'
     ];
 
     /**
@@ -98,8 +100,9 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message'
+        'text' => 'text',
+        'icon' => 'icon',
+        'code' => 'code'
     ];
 
     /**
@@ -108,8 +111,9 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'text' => 'setText',
+        'icon' => 'setIcon',
+        'code' => 'setCode'
     ];
 
     /**
@@ -118,8 +122,9 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'text' => 'getText',
+        'icon' => 'getIcon',
+        'code' => 'getCode'
     ];
 
     /**
@@ -182,8 +187,9 @@ class Error400 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /**
@@ -211,6 +217,54 @@ class Error400 implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->container['text'];
+    }
+
+    /**
+     * Sets text
+     *
+     * @param string $text text
+     *
+     * @return $this
+     */
+    public function setText($text)
+    {
+        $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets icon
+     *
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->container['icon'];
+    }
+
+    /**
+     * Sets icon
+     *
+     * @param string $icon icon
+     *
+     * @return $this
+     */
+    public function setIcon($icon)
+    {
+        $this->container['icon'] = $icon;
+
+        return $this;
+    }
+
+    /**
      * Gets code
      *
      * @return int
@@ -230,30 +284,6 @@ class Error400 implements ModelInterface, ArrayAccess
     public function setCode($code)
     {
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
 
         return $this;
     }

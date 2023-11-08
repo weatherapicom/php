@@ -1,6 +1,6 @@
 <?php
 /**
- * Error400
+ * Marine
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Error400 Class Doc Comment
+ * Marine Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Error400 implements ModelInterface, ArrayAccess
+class Marine implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Error400 implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'error400';
+    protected static $swaggerModelName = 'marine';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-        'message' => 'string'
+        'forecastday' => '\Swagger\Client\Model\MarineForecastday[]'
     ];
 
     /**
@@ -67,8 +66,7 @@ class Error400 implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => 'int32',
-        'message' => null
+        'forecastday' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'message' => 'message'
+        'forecastday' => 'forecastday'
     ];
 
     /**
@@ -108,8 +105,7 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage'
+        'forecastday' => 'setForecastday'
     ];
 
     /**
@@ -118,8 +114,7 @@ class Error400 implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage'
+        'forecastday' => 'getForecastday'
     ];
 
     /**
@@ -182,8 +177,7 @@ class Error400 implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['forecastday'] = isset($data['forecastday']) ? $data['forecastday'] : null;
     }
 
     /**
@@ -211,49 +205,25 @@ class Error400 implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets forecastday
      *
-     * @return int
+     * @return \Swagger\Client\Model\MarineForecastday[]
      */
-    public function getCode()
+    public function getForecastday()
     {
-        return $this->container['code'];
+        return $this->container['forecastday'];
     }
 
     /**
-     * Sets code
+     * Sets forecastday
      *
-     * @param int $code code
+     * @param \Swagger\Client\Model\MarineForecastday[] $forecastday forecastday
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setForecastday($forecastday)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
+        $this->container['forecastday'] = $forecastday;
 
         return $this;
     }

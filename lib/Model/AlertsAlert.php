@@ -1,6 +1,6 @@
 <?php
 /**
- * Search
+ * AlertsAlert
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Search Class Doc Comment
+ * AlertsAlert Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Search implements ModelInterface, ArrayAccess
+class AlertsAlert implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Search implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'search';
+    protected static $swaggerModelName = 'alerts_alert';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,19 @@ class Search implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'region' => 'string',
-        'country' => 'string',
-        'lat' => 'float',
-        'lon' => 'float',
-        'url' => 'string'
+        'headline' => 'string',
+        'msgtype' => 'string',
+        'severity' => 'string',
+        'urgency' => 'string',
+        'areas' => 'string',
+        'category' => 'string',
+        'certainty' => 'string',
+        'event' => 'string',
+        'note' => 'string',
+        'effective' => '\DateTime',
+        'expires' => '\DateTime',
+        'desc' => 'string',
+        'instruction' => 'string'
     ];
 
     /**
@@ -72,13 +78,19 @@ class Search implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int32',
-        'name' => null,
-        'region' => null,
-        'country' => null,
-        'lat' => null,
-        'lon' => null,
-        'url' => null
+        'headline' => null,
+        'msgtype' => null,
+        'severity' => null,
+        'urgency' => null,
+        'areas' => null,
+        'category' => null,
+        'certainty' => null,
+        'event' => null,
+        'note' => null,
+        'effective' => 'date-time',
+        'expires' => 'date-time',
+        'desc' => null,
+        'instruction' => null
     ];
 
     /**
@@ -108,13 +120,19 @@ class Search implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'region' => 'region',
-        'country' => 'country',
-        'lat' => 'lat',
-        'lon' => 'lon',
-        'url' => 'url'
+        'headline' => 'headline',
+        'msgtype' => 'msgtype',
+        'severity' => 'severity',
+        'urgency' => 'urgency',
+        'areas' => 'areas',
+        'category' => 'category',
+        'certainty' => 'certainty',
+        'event' => 'event',
+        'note' => 'note',
+        'effective' => 'effective',
+        'expires' => 'expires',
+        'desc' => 'desc',
+        'instruction' => 'instruction'
     ];
 
     /**
@@ -123,13 +141,19 @@ class Search implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'region' => 'setRegion',
-        'country' => 'setCountry',
-        'lat' => 'setLat',
-        'lon' => 'setLon',
-        'url' => 'setUrl'
+        'headline' => 'setHeadline',
+        'msgtype' => 'setMsgtype',
+        'severity' => 'setSeverity',
+        'urgency' => 'setUrgency',
+        'areas' => 'setAreas',
+        'category' => 'setCategory',
+        'certainty' => 'setCertainty',
+        'event' => 'setEvent',
+        'note' => 'setNote',
+        'effective' => 'setEffective',
+        'expires' => 'setExpires',
+        'desc' => 'setDesc',
+        'instruction' => 'setInstruction'
     ];
 
     /**
@@ -138,13 +162,19 @@ class Search implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'region' => 'getRegion',
-        'country' => 'getCountry',
-        'lat' => 'getLat',
-        'lon' => 'getLon',
-        'url' => 'getUrl'
+        'headline' => 'getHeadline',
+        'msgtype' => 'getMsgtype',
+        'severity' => 'getSeverity',
+        'urgency' => 'getUrgency',
+        'areas' => 'getAreas',
+        'category' => 'getCategory',
+        'certainty' => 'getCertainty',
+        'event' => 'getEvent',
+        'note' => 'getNote',
+        'effective' => 'getEffective',
+        'expires' => 'getExpires',
+        'desc' => 'getDesc',
+        'instruction' => 'getInstruction'
     ];
 
     /**
@@ -207,13 +237,19 @@ class Search implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['lat'] = isset($data['lat']) ? $data['lat'] : null;
-        $this->container['lon'] = isset($data['lon']) ? $data['lon'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['headline'] = isset($data['headline']) ? $data['headline'] : null;
+        $this->container['msgtype'] = isset($data['msgtype']) ? $data['msgtype'] : null;
+        $this->container['severity'] = isset($data['severity']) ? $data['severity'] : null;
+        $this->container['urgency'] = isset($data['urgency']) ? $data['urgency'] : null;
+        $this->container['areas'] = isset($data['areas']) ? $data['areas'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['certainty'] = isset($data['certainty']) ? $data['certainty'] : null;
+        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
+        $this->container['effective'] = isset($data['effective']) ? $data['effective'] : null;
+        $this->container['expires'] = isset($data['expires']) ? $data['expires'] : null;
+        $this->container['desc'] = isset($data['desc']) ? $data['desc'] : null;
+        $this->container['instruction'] = isset($data['instruction']) ? $data['instruction'] : null;
     }
 
     /**
@@ -241,169 +277,313 @@ class Search implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets headline
      *
      * @return string
      */
-    public function getName()
+    public function getHeadline()
     {
-        return $this->container['name'];
+        return $this->container['headline'];
     }
 
     /**
-     * Sets name
+     * Sets headline
      *
-     * @param string $name name
+     * @param string $headline headline
      *
      * @return $this
      */
-    public function setName($name)
+    public function setHeadline($headline)
     {
-        $this->container['name'] = $name;
+        $this->container['headline'] = $headline;
 
         return $this;
     }
 
     /**
-     * Gets region
+     * Gets msgtype
      *
      * @return string
      */
-    public function getRegion()
+    public function getMsgtype()
     {
-        return $this->container['region'];
+        return $this->container['msgtype'];
     }
 
     /**
-     * Sets region
+     * Sets msgtype
      *
-     * @param string $region region
+     * @param string $msgtype msgtype
      *
      * @return $this
      */
-    public function setRegion($region)
+    public function setMsgtype($msgtype)
     {
-        $this->container['region'] = $region;
+        $this->container['msgtype'] = $msgtype;
 
         return $this;
     }
 
     /**
-     * Gets country
+     * Gets severity
      *
      * @return string
      */
-    public function getCountry()
+    public function getSeverity()
     {
-        return $this->container['country'];
+        return $this->container['severity'];
     }
 
     /**
-     * Sets country
+     * Sets severity
      *
-     * @param string $country country
+     * @param string $severity severity
      *
      * @return $this
      */
-    public function setCountry($country)
+    public function setSeverity($severity)
     {
-        $this->container['country'] = $country;
+        $this->container['severity'] = $severity;
 
         return $this;
     }
 
     /**
-     * Gets lat
-     *
-     * @return float
-     */
-    public function getLat()
-    {
-        return $this->container['lat'];
-    }
-
-    /**
-     * Sets lat
-     *
-     * @param float $lat lat
-     *
-     * @return $this
-     */
-    public function setLat($lat)
-    {
-        $this->container['lat'] = $lat;
-
-        return $this;
-    }
-
-    /**
-     * Gets lon
-     *
-     * @return float
-     */
-    public function getLon()
-    {
-        return $this->container['lon'];
-    }
-
-    /**
-     * Sets lon
-     *
-     * @param float $lon lon
-     *
-     * @return $this
-     */
-    public function setLon($lon)
-    {
-        $this->container['lon'] = $lon;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
+     * Gets urgency
      *
      * @return string
      */
-    public function getUrl()
+    public function getUrgency()
     {
-        return $this->container['url'];
+        return $this->container['urgency'];
     }
 
     /**
-     * Sets url
+     * Sets urgency
      *
-     * @param string $url url
+     * @param string $urgency urgency
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setUrgency($urgency)
     {
-        $this->container['url'] = $url;
+        $this->container['urgency'] = $urgency;
+
+        return $this;
+    }
+
+    /**
+     * Gets areas
+     *
+     * @return string
+     */
+    public function getAreas()
+    {
+        return $this->container['areas'];
+    }
+
+    /**
+     * Sets areas
+     *
+     * @param string $areas areas
+     *
+     * @return $this
+     */
+    public function setAreas($areas)
+    {
+        $this->container['areas'] = $areas;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param string $category category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets certainty
+     *
+     * @return string
+     */
+    public function getCertainty()
+    {
+        return $this->container['certainty'];
+    }
+
+    /**
+     * Sets certainty
+     *
+     * @param string $certainty certainty
+     *
+     * @return $this
+     */
+    public function setCertainty($certainty)
+    {
+        $this->container['certainty'] = $certainty;
+
+        return $this;
+    }
+
+    /**
+     * Gets event
+     *
+     * @return string
+     */
+    public function getEvent()
+    {
+        return $this->container['event'];
+    }
+
+    /**
+     * Sets event
+     *
+     * @param string $event event
+     *
+     * @return $this
+     */
+    public function setEvent($event)
+    {
+        $this->container['event'] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string $note note
+     *
+     * @return $this
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets effective
+     *
+     * @return \DateTime
+     */
+    public function getEffective()
+    {
+        return $this->container['effective'];
+    }
+
+    /**
+     * Sets effective
+     *
+     * @param \DateTime $effective effective
+     *
+     * @return $this
+     */
+    public function setEffective($effective)
+    {
+        $this->container['effective'] = $effective;
+
+        return $this;
+    }
+
+    /**
+     * Gets expires
+     *
+     * @return \DateTime
+     */
+    public function getExpires()
+    {
+        return $this->container['expires'];
+    }
+
+    /**
+     * Sets expires
+     *
+     * @param \DateTime $expires expires
+     *
+     * @return $this
+     */
+    public function setExpires($expires)
+    {
+        $this->container['expires'] = $expires;
+
+        return $this;
+    }
+
+    /**
+     * Gets desc
+     *
+     * @return string
+     */
+    public function getDesc()
+    {
+        return $this->container['desc'];
+    }
+
+    /**
+     * Sets desc
+     *
+     * @param string $desc desc
+     *
+     * @return $this
+     */
+    public function setDesc($desc)
+    {
+        $this->container['desc'] = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Gets instruction
+     *
+     * @return string
+     */
+    public function getInstruction()
+    {
+        return $this->container['instruction'];
+    }
+
+    /**
+     * Sets instruction
+     *
+     * @param string $instruction instruction
+     *
+     * @return $this
+     */
+    public function setInstruction($instruction)
+    {
+        $this->container['instruction'] = $instruction;
 
         return $this;
     }
