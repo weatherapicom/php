@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * ForecastDayTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * ForecastDayTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description ForecastDay
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class ForecastDayTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,142 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "ForecastDay"
      */
-    public function testForecast()
+    public function testForecastDay()
     {
     }
 
     /**
-     * Test attribute "forecastday"
+     * Test attribute "maxtemp_c"
      */
-    public function testPropertyForecastday()
+    public function testPropertyMaxtempC()
+    {
+    }
+
+    /**
+     * Test attribute "maxtemp_f"
+     */
+    public function testPropertyMaxtempF()
+    {
+    }
+
+    /**
+     * Test attribute "mintemp_c"
+     */
+    public function testPropertyMintempC()
+    {
+    }
+
+    /**
+     * Test attribute "mintemp_f"
+     */
+    public function testPropertyMintempF()
+    {
+    }
+
+    /**
+     * Test attribute "avgtemp_c"
+     */
+    public function testPropertyAvgtempC()
+    {
+    }
+
+    /**
+     * Test attribute "avgtemp_f"
+     */
+    public function testPropertyAvgtempF()
+    {
+    }
+
+    /**
+     * Test attribute "maxwind_mph"
+     */
+    public function testPropertyMaxwindMph()
+    {
+    }
+
+    /**
+     * Test attribute "maxwind_kph"
+     */
+    public function testPropertyMaxwindKph()
+    {
+    }
+
+    /**
+     * Test attribute "totalprecip_mm"
+     */
+    public function testPropertyTotalprecipMm()
+    {
+    }
+
+    /**
+     * Test attribute "totalprecip_in"
+     */
+    public function testPropertyTotalprecipIn()
+    {
+    }
+
+    /**
+     * Test attribute "avgvis_km"
+     */
+    public function testPropertyAvgvisKm()
+    {
+    }
+
+    /**
+     * Test attribute "avgvis_miles"
+     */
+    public function testPropertyAvgvisMiles()
+    {
+    }
+
+    /**
+     * Test attribute "avghumidity"
+     */
+    public function testPropertyAvghumidity()
+    {
+    }
+
+    /**
+     * Test attribute "daily_will_it_rain"
+     */
+    public function testPropertyDailyWillItRain()
+    {
+    }
+
+    /**
+     * Test attribute "daily_chance_of_rain"
+     */
+    public function testPropertyDailyChanceOfRain()
+    {
+    }
+
+    /**
+     * Test attribute "daily_will_it_snow"
+     */
+    public function testPropertyDailyWillItSnow()
+    {
+    }
+
+    /**
+     * Test attribute "daily_chance_of_snow"
+     */
+    public function testPropertyDailyChanceOfSnow()
+    {
+    }
+
+    /**
+     * Test attribute "condition"
+     */
+    public function testPropertyCondition()
+    {
+    }
+
+    /**
+     * Test attribute "uv"
+     */
+    public function testPropertyUv()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * CurrentAirQualityTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * CurrentAirQualityTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description CurrentAirQuality
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class CurrentAirQualityTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,65 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "CurrentAirQuality"
      */
-    public function testForecast()
+    public function testCurrentAirQuality()
     {
     }
 
     /**
-     * Test attribute "forecastday"
+     * Test attribute "co"
      */
-    public function testPropertyForecastday()
+    public function testPropertyCo()
+    {
+    }
+
+    /**
+     * Test attribute "no2"
+     */
+    public function testPropertyNo2()
+    {
+    }
+
+    /**
+     * Test attribute "o3"
+     */
+    public function testPropertyO3()
+    {
+    }
+
+    /**
+     * Test attribute "so2"
+     */
+    public function testPropertySo2()
+    {
+    }
+
+    /**
+     * Test attribute "pm2_5"
+     */
+    public function testPropertyPm25()
+    {
+    }
+
+    /**
+     * Test attribute "pm10"
+     */
+    public function testPropertyPm10()
+    {
+    }
+
+    /**
+     * Test attribute "us_epa_index"
+     */
+    public function testPropertyUsEpaIndex()
+    {
+    }
+
+    /**
+     * Test attribute "gb_defra_index"
+     */
+    public function testPropertyGbDefraIndex()
     {
     }
 }

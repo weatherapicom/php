@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * AstronomyAstroTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * AstronomyAstroTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description AstronomyAstro
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class AstronomyAstroTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,51 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "AstronomyAstro"
      */
-    public function testForecast()
+    public function testAstronomyAstro()
     {
     }
 
     /**
-     * Test attribute "forecastday"
+     * Test attribute "sunrise"
      */
-    public function testPropertyForecastday()
+    public function testPropertySunrise()
+    {
+    }
+
+    /**
+     * Test attribute "sunset"
+     */
+    public function testPropertySunset()
+    {
+    }
+
+    /**
+     * Test attribute "moonrise"
+     */
+    public function testPropertyMoonrise()
+    {
+    }
+
+    /**
+     * Test attribute "moonset"
+     */
+    public function testPropertyMoonset()
+    {
+    }
+
+    /**
+     * Test attribute "moon_phase"
+     */
+    public function testPropertyMoonPhase()
+    {
+    }
+
+    /**
+     * Test attribute "moon_illumination"
+     */
+    public function testPropertyMoonIllumination()
     {
     }
 }

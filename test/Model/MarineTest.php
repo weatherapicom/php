@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * MarineTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * MarineTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description Marine
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class MarineTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "Marine"
      */
-    public function testForecast()
+    public function testMarine()
     {
     }
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * ForecastForecastdayTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * ForecastForecastdayTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description ForecastForecastday
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class ForecastForecastdayTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,44 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "ForecastForecastday"
      */
-    public function testForecast()
+    public function testForecastForecastday()
     {
     }
 
     /**
-     * Test attribute "forecastday"
+     * Test attribute "date"
      */
-    public function testPropertyForecastday()
+    public function testPropertyDate()
+    {
+    }
+
+    /**
+     * Test attribute "date_epoch"
+     */
+    public function testPropertyDateEpoch()
+    {
+    }
+
+    /**
+     * Test attribute "day"
+     */
+    public function testPropertyDay()
+    {
+    }
+
+    /**
+     * Test attribute "astro"
+     */
+    public function testPropertyAstro()
+    {
+    }
+
+    /**
+     * Test attribute "hour"
+     */
+    public function testPropertyHour()
     {
     }
 }

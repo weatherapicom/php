@@ -1,6 +1,6 @@
 <?php
 /**
- * CurrentTest
+ * MarineHourTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * CurrentTest Class Doc Comment
+ * MarineHourTest Class Doc Comment
  *
  * @category    Class
- * @description Current
+ * @description MarineHour
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CurrentTest extends \PHPUnit_Framework_TestCase
+class MarineHourTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,23 +70,23 @@ class CurrentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Current"
+     * Test "MarineHour"
      */
-    public function testCurrent()
+    public function testMarineHour()
     {
     }
 
     /**
-     * Test attribute "last_updated_epoch"
+     * Test attribute "time_epoch"
      */
-    public function testPropertyLastUpdatedEpoch()
+    public function testPropertyTimeEpoch()
     {
     }
 
     /**
-     * Test attribute "last_updated"
+     * Test attribute "time"
      */
-    public function testPropertyLastUpdated()
+    public function testPropertyTime()
     {
     }
 
@@ -203,6 +203,76 @@ class CurrentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "windchill_c"
+     */
+    public function testPropertyWindchillC()
+    {
+    }
+
+    /**
+     * Test attribute "windchill_f"
+     */
+    public function testPropertyWindchillF()
+    {
+    }
+
+    /**
+     * Test attribute "heatindex_c"
+     */
+    public function testPropertyHeatindexC()
+    {
+    }
+
+    /**
+     * Test attribute "heatindex_f"
+     */
+    public function testPropertyHeatindexF()
+    {
+    }
+
+    /**
+     * Test attribute "dewpoint_c"
+     */
+    public function testPropertyDewpointC()
+    {
+    }
+
+    /**
+     * Test attribute "dewpoint_f"
+     */
+    public function testPropertyDewpointF()
+    {
+    }
+
+    /**
+     * Test attribute "will_it_rain"
+     */
+    public function testPropertyWillItRain()
+    {
+    }
+
+    /**
+     * Test attribute "chance_of_rain"
+     */
+    public function testPropertyChanceOfRain()
+    {
+    }
+
+    /**
+     * Test attribute "will_it_snow"
+     */
+    public function testPropertyWillItSnow()
+    {
+    }
+
+    /**
+     * Test attribute "chance_of_snow"
+     */
+    public function testPropertyChanceOfSnow()
+    {
+    }
+
+    /**
      * Test attribute "vis_km"
      */
     public function testPropertyVisKm()
@@ -213,13 +283,6 @@ class CurrentTest extends \PHPUnit_Framework_TestCase
      * Test attribute "vis_miles"
      */
     public function testPropertyVisMiles()
-    {
-    }
-
-    /**
-     * Test attribute "uv"
-     */
-    public function testPropertyUv()
     {
     }
 
@@ -238,9 +301,51 @@ class CurrentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "air_quality"
+     * Test attribute "sig_ht_mt"
      */
-    public function testPropertyAirQuality()
+    public function testPropertySigHtMt()
+    {
+    }
+
+    /**
+     * Test attribute "swell_ht_mt"
+     */
+    public function testPropertySwellHtMt()
+    {
+    }
+
+    /**
+     * Test attribute "swell_ht_ft"
+     */
+    public function testPropertySwellHtFt()
+    {
+    }
+
+    /**
+     * Test attribute "swell_dir"
+     */
+    public function testPropertySwellDir()
+    {
+    }
+
+    /**
+     * Test attribute "swell_dir_16_point"
+     */
+    public function testPropertySwellDir16Point()
+    {
+    }
+
+    /**
+     * Test attribute "swell_period_secs"
+     */
+    public function testPropertySwellPeriodSecs()
+    {
+    }
+
+    /**
+     * Test attribute "uv"
+     */
+    public function testPropertyUv()
     {
     }
 }

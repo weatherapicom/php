@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * AlertsAlertTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * AlertsAlertTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description AlertsAlert
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class AlertsAlertTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,100 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "AlertsAlert"
      */
-    public function testForecast()
+    public function testAlertsAlert()
     {
     }
 
     /**
-     * Test attribute "forecastday"
+     * Test attribute "headline"
      */
-    public function testPropertyForecastday()
+    public function testPropertyHeadline()
+    {
+    }
+
+    /**
+     * Test attribute "msgtype"
+     */
+    public function testPropertyMsgtype()
+    {
+    }
+
+    /**
+     * Test attribute "severity"
+     */
+    public function testPropertySeverity()
+    {
+    }
+
+    /**
+     * Test attribute "urgency"
+     */
+    public function testPropertyUrgency()
+    {
+    }
+
+    /**
+     * Test attribute "areas"
+     */
+    public function testPropertyAreas()
+    {
+    }
+
+    /**
+     * Test attribute "category"
+     */
+    public function testPropertyCategory()
+    {
+    }
+
+    /**
+     * Test attribute "certainty"
+     */
+    public function testPropertyCertainty()
+    {
+    }
+
+    /**
+     * Test attribute "event"
+     */
+    public function testPropertyEvent()
+    {
+    }
+
+    /**
+     * Test attribute "note"
+     */
+    public function testPropertyNote()
+    {
+    }
+
+    /**
+     * Test attribute "effective"
+     */
+    public function testPropertyEffective()
+    {
+    }
+
+    /**
+     * Test attribute "expires"
+     */
+    public function testPropertyExpires()
+    {
+    }
+
+    /**
+     * Test attribute "desc"
+     */
+    public function testPropertyDesc()
+    {
+    }
+
+    /**
+     * Test attribute "instruction"
+     */
+    public function testPropertyInstruction()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ForecastTest
+ * CurrentConditionTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Swagger\Client;
 
 /**
- * ForecastTest Class Doc Comment
+ * CurrentConditionTest Class Doc Comment
  *
  * @category    Class
- * @description Forecast
+ * @description CurrentCondition
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ForecastTest extends \PHPUnit_Framework_TestCase
+class CurrentConditionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,16 +70,30 @@ class ForecastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Forecast"
+     * Test "CurrentCondition"
      */
-    public function testForecast()
+    public function testCurrentCondition()
     {
     }
 
     /**
-     * Test attribute "forecastday"
+     * Test attribute "text"
      */
-    public function testPropertyForecastday()
+    public function testPropertyText()
+    {
+    }
+
+    /**
+     * Test attribute "icon"
+     */
+    public function testPropertyIcon()
+    {
+    }
+
+    /**
+     * Test attribute "code"
+     */
+    public function testPropertyCode()
     {
     }
 }
